@@ -70,15 +70,15 @@
             <p class="mb-4">Mi piace creare soluzioni moderne, performanti e user-friendly, con attenzione sia al design che alla funzionalità. Ogni progetto è un'opportunità per imparare e innovare.</p>
             <div class="stats-row">
               <div class="stat-item">
-                <div class="stat-number">5+</div>
+                <div class="stat-number" data-target="5">0+</div>
                 <div class="stat-label">Progetti Completati</div>
               </div>
               <div class="stat-item">
-                <div class="stat-number">3+</div>
+                <div class="stat-number" data-target="3">0+</div>
                 <div class="stat-label">Anni di Esperienza</div>
               </div>
               <div class="stat-item">
-                <div class="stat-number">100%</div>
+                <div class="stat-number" data-target="100">0%</div>
                 <div class="stat-label">Clienti Soddisfatti</div>
               </div>
             </div>
@@ -166,7 +166,7 @@
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <span class="level-text">Esperto</span>
+            <span class="level-text">Intermedio</span>
           </div>
         </div>
         
@@ -179,7 +179,7 @@
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <span class="level-text">Intermedio</span>
+            <span class="level-text">Avanzato</span>
           </div>
         </div>
         
@@ -192,7 +192,7 @@
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <span class="level-text">Intermedio</span>
+            <span class="level-text">Avanzato</span>
           </div>
         </div>
         
@@ -205,7 +205,7 @@
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <span class="level-text">Esperto</span>
+            <span class="level-text">Intermedio</span>
           </div>
         </div>
         
@@ -218,7 +218,7 @@
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <span class="level-text">Avanzato</span>
+            <span class="level-text">Intermedio</span>
           </div>
         </div>
         
@@ -231,7 +231,7 @@
             <div class="progress-bar">
               <div class="progress-fill"></div>
             </div>
-            <span class="level-text">Esperto</span>
+            <span class="level-text">Intermedio</span>
           </div>
         </div>
       </div>
@@ -321,7 +321,7 @@
                     <i class="fas fa-envelope"></i>
                   </div>
                   <h5>Email</h5>
-                  <a href="mailto:tuo@email.com">tuo@email.com</a>
+                  <a href="mailto:tiatabusiness@gmail.com">tiatabusiness@gmail.com</a>
                 </div>
               </div>
               <div class="col-md-4 mb-4">
@@ -330,7 +330,7 @@
                     <i class="fab fa-linkedin"></i>
                   </div>
                   <h5>LinkedIn</h5>
-                  <a href="https://linkedin.com/in/tuo-profilo" target="_blank">linkedin.com/in/tuo-profilo</a>
+                  <a href="www.linkedin.com/in/mattia-tarallo-942234222" target="_blank">linkedin.com/in/mattia-tarallo-942234222</a>
                 </div>
               </div>
               <div class="col-md-4 mb-4">
@@ -339,7 +339,7 @@
                     <i class="fab fa-whatsapp"></i>
                   </div>
                   <h5>WhatsApp</h5>
-                  <a href="https://wa.me/39XXXXXXXXX" target="_blank">+39 XXX XXX XXXX</a>
+                  <a href="https://wa.me/393398210976" target="_blank">+39 XXX XXX XXXX</a>
                 </div>
               </div>
             </div>
@@ -376,6 +376,78 @@
     document.querySelectorAll('.tech-item').forEach(item => {
       techObserver.observe(item);
     });
+
+    // Intersection Observer per le statistiche
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          animateNumbers();
+        }
+      });
+    }, observerOptions);
+
+    // Osserva la sezione about per le statistiche
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+      statsObserver.observe(aboutSection);
+    }
+
+    // Osserva gli elementi stat-item individuali
+    const statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach((item, index) => {
+      const itemObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Aggiungi un delay progressivo per ogni elemento
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, index * 200); // 200ms di delay tra ogni elemento
+          }
+        });
+      }, observerOptions);
+      
+      itemObserver.observe(item);
+    });
+
+    // Funzione per animare i numeri
+    function animateNumbers() {
+      const statNumbers = document.querySelectorAll('.stat-number');
+      
+      statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-target'));
+        const suffix = stat.textContent.includes('+') ? '+' : 
+                      stat.textContent.includes('%') ? '%' : '';
+        
+        let current = 0;
+        const increment = target / 50; // 50 steps per l'animazione
+        const duration = 2000; // 2 secondi
+        const stepTime = duration / 50;
+        
+        stat.classList.add('animating');
+        
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+            stat.classList.remove('animating');
+            stat.classList.add('completed');
+            
+            // Rimuovi la classe completed dopo l'animazione
+            setTimeout(() => {
+              stat.classList.remove('completed');
+            }, 600);
+          }
+          
+          if (suffix === '%') {
+            stat.textContent = Math.floor(current) + suffix;
+          } else {
+            stat.textContent = Math.floor(current) + suffix;
+          }
+        }, stepTime);
+      });
+    }
   </script>
 </body>
 </html> 

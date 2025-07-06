@@ -894,6 +894,40 @@ html {
   width: var(--progress-width) !important;
 }
 
+/* Stats animations */
+.stat-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.stat-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-number {
+  transition: all 0.3s ease;
+}
+
+.stat-number.animating {
+  color: var(--accent-primary);
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.stat-number.completed {
+  animation: numberBounce 0.6s ease;
+}
+
+@keyframes numberBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

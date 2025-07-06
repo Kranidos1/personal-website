@@ -775,50 +775,17 @@ html {
 }
 
 /* Projects Section */
-.projects-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.projects-scroll {
-  display: flex;
-  gap: 2rem;
-  overflow-x: auto;
-  padding: 1rem 0;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-.projects-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-
-.projects-scroll::-webkit-scrollbar-track {
-  background: var(--bg-tertiary);
-  border-radius: 4px;
-}
-
-.projects-scroll::-webkit-scrollbar-thumb {
-  background: var(--accent-primary);
-  border-radius: 4px;
-}
-
-.projects-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-secondary);
-}
-
 .project-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 15px;
   padding: 2rem;
-  min-width: 320px;
-  max-width: 320px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-light);
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
 .project-card::before {
@@ -1350,14 +1317,7 @@ html {
   }
   
   /* Projects section mobile */
-  .projects-scroll {
-    gap: 1rem;
-    padding: 0.5rem 0;
-  }
-  
   .project-card {
-    min-width: 280px;
-    max-width: 280px;
     padding: 1.5rem;
   }
   

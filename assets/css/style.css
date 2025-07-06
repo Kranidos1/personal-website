@@ -416,6 +416,23 @@ html {
   cursor: pointer;
 }
 
+.tech-item::after {
+  content: '👆 Clicca per saperne di più';
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tech-item:hover::after {
+  opacity: 1;
+}
+
 .tech-item::before {
   content: '';
   position: absolute;
@@ -543,6 +560,119 @@ html {
 .tech-item[data-tech="JavaScript"] .tech-icon {
   background: linear-gradient(135deg, #f7df1e 0%, #f0db4f 100%);
   color: #000;
+}
+
+.tech-item[data-tech="Docker"] .tech-icon {
+  background: linear-gradient(135deg, #2496ed 0%, #0db7ed 100%);
+}
+
+/* Tech Modal */
+.tech-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.tech-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tech-modal-content {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  transform: scale(0.7);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-heavy);
+}
+
+.tech-modal.active .tech-modal-content {
+  transform: scale(1);
+}
+
+.tech-modal-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.tech-modal-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.tech-modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.tech-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-modal-close:hover {
+  background: var(--bg-tertiary);
+  color: var(--accent-primary);
+}
+
+.tech-modal-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.tech-modal-level {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.tech-modal-level-label {
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Contact Section */
@@ -745,6 +875,28 @@ html {
   }
   
   .tech-name {
+    font-size: 1.25rem;
+  }
+  
+  /* Tech Modal mobile */
+  .tech-modal-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .tech-modal-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .tech-modal-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  .tech-modal-title {
     font-size: 1.25rem;
   }
   

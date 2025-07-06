@@ -92,7 +92,7 @@
                   <i class="fas fa-user"></i>
                 </div>
                 <div class="profile-info">
-                  <h4>Il Tuo Nome</h4>
+                  <h4>Mattia Tarallo</h4>
                   <p>Full Stack Developer</p>
                 </div>
               </div>
@@ -144,7 +144,7 @@
     <div class="container">
       <h2 class="section-title text-center mb-5">Tecnologie & Framework</h2>
       <div class="technologies-grid">
-        <div class="tech-item" data-tech="Python" style="--progress-width: 90%">
+        <div class="tech-item" data-tech="Python" style="--progress-width: 90%" data-description="Python è perfetto per sviluppare applicazioni web robuste, API RESTful e automazioni. La sua sintassi pulita e l'ampia libreria di moduli permettono di creare soluzioni scalabili e mantenibili in tempi rapidi.">
           <div class="tech-icon">
             <i class="fab fa-python"></i>
           </div>
@@ -157,7 +157,7 @@
           </div>
         </div>
         
-        <div class="tech-item" data-tech="Django" style="--progress-width: 85%">
+        <div class="tech-item" data-tech="Django" style="--progress-width: 75%" data-description="Django offre un framework completo per applicazioni web enterprise. Con il suo sistema di autenticazione integrato, ORM potente e admin panel automatico, riduce drasticamente i tempi di sviluppo garantendo sicurezza e scalabilità.">
           <div class="tech-icon">
             <i class="fas fa-leaf"></i>
           </div>
@@ -170,7 +170,7 @@
           </div>
         </div>
         
-        <div class="tech-item" data-tech="Flutter" style="--progress-width: 80%">
+        <div class="tech-item" data-tech="Flutter" style="--progress-width: 85%" data-description="Flutter permette di sviluppare app native per iOS e Android con un unico codice base. Performance native, UI fluida e hot reload per uno sviluppo veloce e efficiente. Ideale per ridurre costi e tempi di sviluppo.">
           <div class="tech-icon">
             <i class="fas fa-mobile-alt"></i>
           </div>
@@ -183,7 +183,7 @@
           </div>
         </div>
         
-        <div class="tech-item" data-tech="Dart" style="--progress-width: 75%">
+        <div class="tech-item" data-tech="Dart" style="--progress-width: 80%" data-description="Dart è il linguaggio di programmazione moderno e type-safe che alimenta Flutter. Con la sua sintassi pulita, null safety e compilazione nativa, garantisce applicazioni performanti e codice mantenibile.">
           <div class="tech-icon">
             <i class="fas fa-code"></i>
           </div>
@@ -196,7 +196,7 @@
           </div>
         </div>
         
-        <div class="tech-item" data-tech="HTML5" style="--progress-width: 95%">
+        <div class="tech-item" data-tech="HTML5" style="--progress-width: 75%" data-description="HTML5 è il fondamento di ogni sito web moderno. Con semantic markup, form avanzati e integrazione multimediale, crea strutture web accessibili, SEO-friendly e compatibili con tutti i dispositivi.">
           <div class="tech-icon">
             <i class="fab fa-html5"></i>
           </div>
@@ -209,7 +209,7 @@
           </div>
         </div>
         
-        <div class="tech-item" data-tech="CSS3" style="--progress-width: 90%">
+        <div class="tech-item" data-tech="CSS3" style="--progress-width: 75%" data-description="CSS3 trasforma i siti web in esperienze visive straordinarie. Con Flexbox, Grid, animazioni e media queries, crea design responsive, moderni e accattivanti che si adattano perfettamente a ogni dispositivo.">
           <div class="tech-icon">
             <i class="fab fa-css3-alt"></i>
           </div>
@@ -222,11 +222,24 @@
           </div>
         </div>
         
-        <div class="tech-item" data-tech="JavaScript" style="--progress-width: 85%">
+        <div class="tech-item" data-tech="JavaScript" style="--progress-width: 75%" data-description="JavaScript è il motore dell'interattività web moderna. Con ES6+, async/await e framework come React, crea applicazioni dinamiche, reattive e user-friendly che offrono esperienze utente eccezionali.">
           <div class="tech-icon">
             <i class="fab fa-js-square"></i>
           </div>
           <div class="tech-name">JavaScript</div>
+          <div class="tech-level">
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="level-text">Intermedio</span>
+          </div>
+        </div>
+        
+        <div class="tech-item" data-tech="Docker" style="--progress-width: 70%" data-description="Docker rivoluziona il deployment e la gestione delle applicazioni. Con containerizzazione, garantisce ambienti di sviluppo e produzione identici, facilitando il deployment, scaling e manutenzione delle applicazioni.">
+          <div class="tech-icon">
+            <i class="fab fa-docker"></i>
+          </div>
+          <div class="tech-name">Docker</div>
           <div class="tech-level">
             <div class="progress-bar">
               <div class="progress-fill"></div>
@@ -330,7 +343,7 @@
                     <i class="fab fa-linkedin"></i>
                   </div>
                   <h5>LinkedIn</h5>
-                  <a href="www.linkedin.com/in/mattia-tarallo-942234222" target="_blank">linkedin.com/in/mattia-tarallo-942234222</a>
+                  <a href="www.linkedin.com/in/mattia-tarallo-942234222" target="_blank">www.linkedin.com/in/mattia-tarallo-942234222</a>
                 </div>
               </div>
               <div class="col-md-4 mb-4">
@@ -339,7 +352,7 @@
                     <i class="fab fa-whatsapp"></i>
                   </div>
                   <h5>WhatsApp</h5>
-                  <a href="https://wa.me/393398210976" target="_blank">+39 XXX XXX XXXX</a>
+                  <a href="https://wa.me/393398210976" target="_blank">+39 339 821 0976</a>
                 </div>
               </div>
             </div>
@@ -355,6 +368,27 @@
       <p class="mb-0">&copy; 2024 Mattia Tarallo. Tutti i diritti riservati.</p>
     </div>
   </footer>
+
+  <!-- Tech Modal -->
+  <div class="tech-modal" id="techModal">
+    <div class="tech-modal-content">
+      <button class="tech-modal-close" id="techModalClose">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="tech-modal-header">
+        <div class="tech-modal-icon" id="modalIcon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="tech-modal-title" id="modalTitle">Tecnologia</h3>
+      </div>
+      <p class="tech-modal-description" id="modalDescription">
+        Descrizione della tecnologia...
+      </p>
+      <div class="tech-modal-level">
+        <div class="tech-modal-level-label" id="modalLevel">Livello: Intermedio</div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -376,6 +410,58 @@
     document.querySelectorAll('.tech-item').forEach(item => {
       techObserver.observe(item);
     });
+
+    // Tech Modal functionality
+    const techModal = document.getElementById('techModal');
+    const techModalClose = document.getElementById('techModalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalLevel = document.getElementById('modalLevel');
+
+    // Click handlers per le tecnologie
+    document.querySelectorAll('.tech-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const techName = item.getAttribute('data-tech');
+        const description = item.getAttribute('data-description');
+        const level = item.querySelector('.level-text').textContent;
+        const icon = item.querySelector('.tech-icon i').className;
+        
+        // Popola il modal
+        modalTitle.textContent = techName;
+        modalDescription.textContent = description;
+        modalLevel.textContent = `Livello: ${level}`;
+        modalIcon.innerHTML = `<i class="${icon}"></i>`;
+        
+        // Applica lo stesso stile dell'icona originale
+        const originalIcon = item.querySelector('.tech-icon');
+        modalIcon.style.background = window.getComputedStyle(originalIcon).background;
+        
+        // Mostra il modal
+        techModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Chiudi modal
+    techModalClose.addEventListener('click', closeModal);
+    techModal.addEventListener('click', (e) => {
+      if (e.target === techModal) {
+        closeModal();
+      }
+    });
+
+    // Chiudi con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && techModal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+      techModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
     // Intersection Observer per le statistiche
     const statsObserver = new IntersectionObserver((entries) => {

@@ -775,8 +775,42 @@ html {
 }
 
 /* Projects Section - Uses same style as technologies */
+.projects-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-scroll::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+.projects-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+
+.projects-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
 .project-tech-item {
-  /* Inherits all styles from .tech-item */
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
 }
 
 /* Footer */
@@ -1102,6 +1136,17 @@ html {
     height: 70px;
     font-size: 1.75rem;
     margin: 0 auto 1rem;
+  }
+  
+  /* Projects section mobile */
+  .projects-scroll {
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .project-tech-item {
+    min-width: 280px;
+    max-width: 280px;
   }
   
 

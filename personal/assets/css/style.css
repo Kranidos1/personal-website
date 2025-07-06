@@ -1,0 +1,11 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+footer {
+  font-size: 0.95rem;
+} 

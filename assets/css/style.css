@@ -751,6 +751,10 @@ html {
 }
 
 /* Contact card link styles */
+.contact-card {
+  position: relative;
+}
+
 .contact-card-link {
   display: block;
   text-decoration: none;
@@ -761,6 +765,7 @@ html {
   right: 0;
   bottom: 0;
   z-index: 1;
+  pointer-events: auto;
 }
 
 .contact-card-link:hover {
@@ -772,10 +777,21 @@ html {
   color: var(--accent-primary);
   font-weight: 500;
   transition: all 0.3s ease;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-card:hover .contact-text {
   color: var(--text-primary);
+}
+
+/* Assicura che tutto il contenuto sia sempre visibile */
+.contact-card .contact-icon,
+.contact-card h5,
+.contact-card .contact-text {
+  position: relative;
+  z-index: 2;
 }
 
 /* Footer */
@@ -1094,6 +1110,7 @@ html {
     text-align: center;
     padding: 2rem 1.5rem;
     margin-bottom: 1.5rem;
+    position: relative;
   }
   
   .contact-icon {

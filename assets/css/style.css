@@ -775,8 +775,18 @@ html {
 }
 
 /* Projects Section - Uses same style as technologies */
+.projects-scroll {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
 .project-tech-item {
   /* Inherits all styles from .tech-item */
+  flex: 0 0 280px;
+  scroll-snap-align: start;
 }
 
 /* Footer */

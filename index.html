@@ -147,73 +147,76 @@
       <h2 class="section-title text-center mb-5">Progetti</h2>
       <div class="row">
         <div class="col-md-6 col-lg-4 mb-4">
-          <div class="project-card" data-project="gestione-ordini">
-            <div class="project-icon">
+          <div class="tech-item project-tech-item" data-project="gestione-ordini" style="--progress-width: 100%">
+            <div class="tech-icon">
               <i class="fas fa-boxes"></i>
             </div>
-            <h4>Gestione Ordini B2B Multi-azienda</h4>
-            <p>Applicazione mobile per agenti di vendita con configurazione dinamica per aziende</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">wxPython</span>
+            <div class="tech-name">Gestione Ordini B2B Multi-azienda</div>
+            <div class="tech-level">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+              <span class="level-text">Completato</span>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-4 mb-4">
-          <div class="project-card" data-project="monitoraggio-log">
-            <div class="project-icon">
+          <div class="tech-item project-tech-item" data-project="monitoraggio-log" style="--progress-width: 100%">
+            <div class="tech-icon">
               <i class="fas fa-chart-line"></i>
             </div>
-            <h4>Monitoraggio Log per Clienti Aziendali</h4>
-            <p>Monitoraggio in tempo reale di funzioni, servizi ed errori nei sistemi gestionali</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Python</span>
+            <div class="tech-name">Monitoraggio Log per Clienti Aziendali</div>
+            <div class="tech-level">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+              <span class="level-text">Completato</span>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-4 mb-4">
-          <div class="project-card" data-project="dashboard-vendite">
-            <div class="project-icon">
+          <div class="tech-item project-tech-item" data-project="dashboard-vendite" style="--progress-width: 100%">
+            <div class="tech-icon">
               <i class="fas fa-chart-bar"></i>
             </div>
-            <h4>Dashboard per Ordini e Vendite</h4>
-            <p>Dashboard completa per monitoraggio ordini, vendite e analisi performance</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Python</span>
+            <div class="tech-name">Dashboard per Ordini e Vendite</div>
+            <div class="tech-level">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+              <span class="level-text">Completato</span>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-4 mb-4">
-          <div class="project-card" data-project="agenzia-viaggi">
-            <div class="project-icon">
+          <div class="tech-item project-tech-item" data-project="agenzia-viaggi" style="--progress-width: 100%">
+            <div class="tech-icon">
               <i class="fas fa-plane"></i>
             </div>
-            <h4>App Mobile per Agenzia di Viaggi</h4>
-            <p>Gestione coupon, offerte, appuntamenti e prenotazioni per agenzie di viaggi</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Django</span>
-              <span class="tech-tag">Firebase</span>
+            <div class="tech-name">App Mobile per Agenzia di Viaggi</div>
+            <div class="tech-level">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+              <span class="level-text">Completato</span>
             </div>
           </div>
         </div>
         
         <div class="col-md-6 col-lg-4 mb-4">
-          <div class="project-card" data-project="fashion-avenue">
-            <div class="project-icon">
+          <div class="tech-item project-tech-item" data-project="fashion-avenue" style="--progress-width: 100%">
+            <div class="tech-icon">
               <i class="fas fa-tshirt"></i>
             </div>
-            <h4>Fashion Avenue – Vendita e Magazzino</h4>
-            <p>App cross-platform per negozi retail con gestione vendite e magazzino</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Python</span>
+            <div class="tech-name">Fashion Avenue – Vendita e Magazzino</div>
+            <div class="tech-level">
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+              <span class="level-text">Completato</span>
             </div>
           </div>
         </div>
@@ -472,29 +475,7 @@
     </div>
   </div>
 
-  <!-- Project Modal -->
-  <div class="project-modal" id="projectModal">
-    <div class="project-modal-content">
-      <button class="project-modal-close" id="projectModalClose">
-        <i class="fas fa-times"></i>
-      </button>
-      <div class="project-modal-header">
-        <div class="project-modal-icon" id="projectModalIcon">
-          <i class="fas fa-project-diagram"></i>
-        </div>
-        <h3 class="project-modal-title" id="projectModalTitle">Progetto</h3>
-      </div>
-      <div class="project-modal-description" id="projectModalDescription">
-        Descrizione del progetto...
-      </div>
-      <div class="project-modal-tech">
-        <h4>Tecnologie utilizzate:</h4>
-        <div class="project-tech-list" id="projectTechList">
-          <!-- Tecnologie verranno inserite dinamicamente -->
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -525,23 +506,41 @@
     const modalIcon = document.getElementById('modalIcon');
     const modalLevel = document.getElementById('modalLevel');
 
-    // Click handlers per le tecnologie
+    // Click handlers per le tecnologie e progetti
     document.querySelectorAll('.tech-item').forEach(item => {
       item.addEventListener('click', () => {
         const techName = item.getAttribute('data-tech');
-        const description = item.getAttribute('data-description');
-        const level = item.querySelector('.level-text').textContent;
-        const icon = item.querySelector('.tech-icon i').className;
+        const projectId = item.getAttribute('data-project');
         
-        // Popola il modal
-        modalTitle.textContent = techName;
-        modalDescription.textContent = description;
-        modalLevel.textContent = `Livello: ${level}`;
-        modalIcon.innerHTML = `<i class="${icon}"></i>`;
-        
-        // Applica lo stesso stile dell'icona originale
-        const originalIcon = item.querySelector('.tech-icon');
-        modalIcon.style.background = window.getComputedStyle(originalIcon).background;
+        if (techName) {
+          // È una tecnologia
+          const description = item.getAttribute('data-description');
+          const level = item.querySelector('.level-text').textContent;
+          const icon = item.querySelector('.tech-icon i').className;
+          
+          // Popola il modal
+          modalTitle.textContent = techName;
+          modalDescription.textContent = description;
+          modalLevel.textContent = `Livello: ${level}`;
+          modalIcon.innerHTML = `<i class="${icon}"></i>`;
+          
+          // Applica lo stesso stile dell'icona originale
+          const originalIcon = item.querySelector('.tech-icon');
+          modalIcon.style.background = window.getComputedStyle(originalIcon).background;
+        } else if (projectId) {
+          // È un progetto
+          const projectData = projectsData[projectId];
+          if (projectData) {
+            modalTitle.textContent = projectData.title;
+            modalDescription.textContent = projectData.description;
+            modalLevel.textContent = 'Stato: Completato';
+            modalIcon.innerHTML = `<i class="${projectData.icon}"></i>`;
+            
+            // Applica lo stesso stile dell'icona originale
+            const originalIcon = item.querySelector('.tech-icon');
+            modalIcon.style.background = window.getComputedStyle(originalIcon).background;
+          }
+        }
         
         // Mostra il modal
         techModal.classList.add('active');
@@ -569,130 +568,34 @@
       document.body.style.overflow = '';
     }
 
-    // Project Modal functionality
-    const projectModal = document.getElementById('projectModal');
-    const projectModalClose = document.getElementById('projectModalClose');
-    const projectModalTitle = document.getElementById('projectModalTitle');
-    const projectModalDescription = document.getElementById('projectModalDescription');
-    const projectModalIcon = document.getElementById('projectModalIcon');
-    const projectTechList = document.getElementById('projectTechList');
-
     // Dati dei progetti
     const projectsData = {
       'gestione-ordini': {
         title: '📦 Gestione Ordini B2B Multi-azienda',
-        description: 'Applicazione mobile sviluppata per agenti di vendita di diverse aziende. Ogni agente può personalizzare e gestire ordini, visualizzare articoli e monitorare lo stato degli acquisti. Le schermate si adattano dinamicamente alla configurazione della singola azienda.\n\n💡 Soluzione ideale per realtà che gestiscono reti commerciali complesse.',
-        icon: 'fas fa-boxes',
-        technologies: [
-          { category: 'Frontend', tech: 'Flutter (cross-platform)' },
-          { category: 'Backend', tech: 'Python (Webservice)' },
-          { category: 'Configuratore', tech: 'Python + wxPython' },
-          { category: 'Architettura', tech: 'MVVM' },
-          { category: 'State Management', tech: 'Provider' }
-        ]
+        description: 'Applicazione mobile sviluppata per agenti di vendita di diverse aziende. Ogni agente può personalizzare e gestire ordini, visualizzare articoli e monitorare lo stato degli acquisti. Le schermate si adattano dinamicamente alla configurazione della singola azienda.\n\n💡 Soluzione ideale per realtà che gestiscono reti commerciali complesse.\n\nTecnologie utilizzate:\n• Frontend: Flutter (cross-platform)\n• Backend: Python (Webservice)\n• Configuratore: Python + wxPython\n• Architettura: MVVM\n• State Management: Provider',
+        icon: 'fas fa-boxes'
       },
       'monitoraggio-log': {
         title: '🛠️ Monitoraggio Log per Clienti Aziendali',
-        description: 'Un\'applicazione che permette alle aziende di monitorare in tempo reale il funzionamento di funzioni, servizi ed eventuali errori nei sistemi gestionali. Migliora l\'assistenza tecnica e consente una diagnosi più veloce dei problemi.\n\n💡 Ideale per aziende che offrono supporto tecnico ai propri clienti.',
-        icon: 'fas fa-chart-line',
-        technologies: [
-          { category: 'Frontend', tech: 'Flutter (mobile)' },
-          { category: 'Backend', tech: 'Python (Webservice)' },
-          { category: 'Gestore errori', tech: 'Python' },
-          { category: 'Architettura', tech: 'MVVM' },
-          { category: 'State Management', tech: 'Provider' }
-        ]
+        description: 'Un\'applicazione che permette alle aziende di monitorare in tempo reale il funzionamento di funzioni, servizi ed eventuali errori nei sistemi gestionali. Migliora l\'assistenza tecnica e consente una diagnosi più veloce dei problemi.\n\n💡 Ideale per aziende che offrono supporto tecnico ai propri clienti.\n\nTecnologie utilizzate:\n• Frontend: Flutter (mobile)\n• Backend: Python (Webservice)\n• Gestore errori: Python\n• Architettura: MVVM\n• State Management: Provider',
+        icon: 'fas fa-chart-line'
       },
       'dashboard-vendite': {
         title: '📊 Dashboard per Ordini e Vendite',
-        description: 'Una dashboard completa che permette ai clienti di monitorare in modo chiaro ordini, vendite per regione e per categoria, e di visualizzare report periodici. Include anche l\'analisi del guadagno netto.\n\n💡 Perfetta per aziende che vogliono avere il controllo completo sulle performance di vendita.',
-        icon: 'fas fa-chart-bar',
-        technologies: [
-          { category: 'Frontend', tech: 'Flutter' },
-          { category: 'Backend', tech: 'Python' },
-          { category: 'Architettura', tech: 'MVVM' },
-          { category: 'State Management', tech: 'Provider' }
-        ]
+        description: 'Una dashboard completa che permette ai clienti di monitorare in modo chiaro ordini, vendite per regione e per categoria, e di visualizzare report periodici. Include anche l\'analisi del guadagno netto.\n\n💡 Perfetta per aziende che vogliono avere il controllo completo sulle performance di vendita.\n\nTecnologie utilizzate:\n• Frontend: Flutter\n• Backend: Python\n• Architettura: MVVM\n• State Management: Provider',
+        icon: 'fas fa-chart-bar'
       },
       'agenzia-viaggi': {
         title: '✈️ App Mobile per Agenzia di Viaggi',
-        description: 'Applicazione pensata per migliorare la comunicazione tra l\'agenzia e i clienti. Permette di gestire coupon, offerte last minute, appuntamenti e prenotazioni. Ogni cliente può creare liste regalo condivisibili e ricevere notifiche personalizzate.\n\n💡 Uno strumento su misura per fidelizzare i clienti e semplificare la gestione dei viaggi.',
-        icon: 'fas fa-plane',
-        technologies: [
-          { category: 'Frontend', tech: 'Flutter (cross-platform)' },
-          { category: 'Backend', tech: 'Django con Python' },
-          { category: 'Notifiche Push', tech: 'Firebase Cloud Messaging' },
-          { category: 'Architettura', tech: 'MVVC' },
-          { category: 'State Management', tech: 'Provider' }
-        ]
+        description: 'Applicazione pensata per migliorare la comunicazione tra l\'agenzia e i clienti. Permette di gestire coupon, offerte last minute, appuntamenti e prenotazioni. Ogni cliente può creare liste regalo condivisibili e ricevere notifiche personalizzate.\n\n💡 Uno strumento su misura per fidelizzare i clienti e semplificare la gestione dei viaggi.\n\nTecnologie utilizzate:\n• Frontend: Flutter (cross-platform)\n• Backend: Django con Python\n• Notifiche Push: Firebase Cloud Messaging\n• Architettura: MVVC\n• State Management: Provider',
+        icon: 'fas fa-plane'
       },
       'fashion-avenue': {
         title: '🛍️ Fashion Avenue – Vendita e Magazzino (Tirocinio Universitario)',
-        description: 'App cross-platform creata per i negozi retail, che semplifica le operazioni di vendita e il controllo del magazzino. L\'interfaccia è moderna e funziona su browser e dispositivi mobili.\n\n💡 Pensata per negozi che vogliono velocizzare e digitalizzare la gestione quotidiana.',
-        icon: 'fas fa-tshirt',
-        technologies: [
-          { category: 'Frontend', tech: 'Flutter' },
-          { category: 'Backend', tech: 'Python' },
-          { category: 'Pattern Architetturale', tech: 'MVC' },
-          { category: 'Comunicazione', tech: 'Webservice' }
-        ]
+        description: 'App cross-platform creata per i negozi retail, che semplifica le operazioni di vendita e il controllo del magazzino. L\'interfaccia è moderna e funziona su browser e dispositivi mobili.\n\n💡 Pensata per negozi che vogliono velocizzare e digitalizzare la gestione quotidiana.\n\nTecnologie utilizzate:\n• Frontend: Flutter\n• Backend: Python\n• Pattern Architetturale: MVC\n• Comunicazione: Webservice',
+        icon: 'fas fa-tshirt'
       }
     };
-
-    // Click handlers per i progetti
-    document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const projectId = card.getAttribute('data-project');
-        const projectData = projectsData[projectId];
-        
-        if (projectData) {
-          // Popola il modal
-          projectModalTitle.textContent = projectData.title;
-          projectModalDescription.textContent = projectData.description;
-          projectModalIcon.innerHTML = `<i class="${projectData.icon}"></i>`;
-          
-          // Popola le tecnologie
-          projectTechList.innerHTML = '';
-          projectData.technologies.forEach(tech => {
-            const techCategory = document.createElement('div');
-            techCategory.className = 'tech-category';
-            techCategory.innerHTML = `
-              <h5>${tech.category}</h5>
-              <p>${tech.tech}</p>
-            `;
-            projectTechList.appendChild(techCategory);
-          });
-          
-          // Mostra il modal
-          projectModal.classList.add('active');
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    });
-
-    // Chiudi modal progetto
-    projectModalClose.addEventListener('click', closeProjectModal);
-    projectModal.addEventListener('click', (e) => {
-      if (e.target === projectModal) {
-        closeProjectModal();
-      }
-    });
-
-    // Chiudi con ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        if (techModal.classList.contains('active')) {
-          closeModal();
-        } else if (projectModal.classList.contains('active')) {
-          closeProjectModal();
-        }
-      }
-    });
-
-    function closeProjectModal() {
-      projectModal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
 
     // Intersection Observer per le statistiche
     const statsObserver = new IntersectionObserver((entries) => {
